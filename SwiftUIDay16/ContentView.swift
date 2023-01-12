@@ -3,21 +3,33 @@
 //  SwiftUIDay16
 //
 //  Created by Fatih Durmaz on 12.01.2023.
+//  #100DaysofSwiftUI 
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    
+    let ogrenciler = ["Ali", "Ayşe", "Ahmet"]
+    @State private var seciliOgrenci = "Harry"
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            Form{
+                    Picker("Öğrenci Seçiniz", selection: $seciliOgrenci) {
+                        ForEach(ogrenciler, id:\.self){ogrenci in
+                            HStack {
+                                Text(ogrenci)
+                                Image(systemName: "person")
+                            }
+                        }
+                    }
+            }
+            .navigationTitle("Picker, Form ve Two-Way Binding")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
+        }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
