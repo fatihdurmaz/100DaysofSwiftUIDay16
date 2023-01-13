@@ -21,7 +21,7 @@ struct ContentView: View {
                          */
                         
                         ForEach(ogrenciler, id:\.self){ogrenci in
-                            /* veriler bir veri kaynağından (burada öğrenciler dizisinden) geliyor. Hangi değerle ilgli işlem yapmamızı ayırt etmesi için id: bizden bunu belirtmemizi istiyor. /.self diyerek dizinin elemanlarını gösteriyoruz. Benzersiz oldukları için sorun yok. Başka veri kaynağımız olduğu zaman (diyelim ki veritabanı veya json dosyası) UUID gibi benzersiz bir değer de verebilirdik. */
+                            /* Veriler bir veri kaynağından (burada öğrenciler dizisinden) geliyor. Hangi değerle ilgli işlem yapmamızı ayırt etmesi için id: bizden bunu belirtmemizi istiyor. /.self diyerek dizinin elemanlarını gösteriyoruz. Benzersiz oldukları için sorun yok. Başka veri kaynağımız olduğu zaman (diyelim ki veritabanı veya json dosyası) UUID gibi benzersiz bir değer de verebilirdik. */
                             
                             HStack { // picker in içini simge ve öğrenciler dizisinin elemanlarıyla for döngüsü yardımıyla dolduruyoruz.
                                 Text(ogrenci)
